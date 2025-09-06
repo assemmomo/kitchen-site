@@ -35,7 +35,7 @@ const controlSearchResults = async function () {
         // Load search results
         await model.loadSearchResults(query);
         // Render results
-        searchResultView.render(model.getSearchResultsPage(3));
+        searchResultView.render(model.getSearchResultsPage());
         // Render initial pagination buttons
         PageButtonsView.render(model.state.search);
 
@@ -62,3 +62,4 @@ document.querySelector('.search').addEventListener('submit', function (e) {
     e.preventDefault();
     controlSearchResults();
 });
+
