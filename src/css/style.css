@@ -1,0 +1,367 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+    --mainColor--: #c56912;
+    --lightColor--:rgb(253, 233, 233);
+}
+body{
+    position: relative;
+    min-width: 99vw;
+    background:linear-gradient(to right, var(--mainColor--), #ecbc52);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.container{
+    width: 75%;
+    min-height: 100vh;
+    height: fit-content;
+    margin-top: 100px;
+    background-color: var(--lightColor--);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+nav{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    & .navIcon{
+        display: flex;
+        align-items: center;
+        width: 25%;
+        height: 100%;
+        & img{
+            width: 80px;
+            border-radius: 50%;
+            margin-left: 50px;
+        }
+    }
+    & .navSearch{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        & form{
+            width: 90%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & input{
+                width: 70%;
+                height: 50%;
+                border: none;
+                outline: none;
+                border-radius: 30px;
+                padding-left: 20px;
+                &::placeholder{
+                    opacity: 0.7;
+                }
+            }
+            & button{
+                position: relative;
+                width: 25%;
+                height: 50%;
+                margin-left: 10px;
+                border: none;
+                outline: none;
+                border-radius: 30px;
+                background-color: var(--mainColor--);
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                right: 50px;
+                & i{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    & .navLinks{
+        width: 25%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        & a{
+            width: 40%;
+            text-decoration: none;
+            color: black;
+            & i{
+                color: var(--mainColor--);
+            }
+        }
+    }
+}
+.content {
+    height: calc(100% - 100px);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px 10px;
+    & .sideBar {
+        position: relative;
+        background-color: #f4f4f4;
+        border-right: 1px solid #ddd;
+        height: 100% ;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        & ul {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            height: fit-content;
+            padding-top: 20px;
+            & li {
+                height: 100px;
+                width: 100%;
+                transition: 0.3s;
+                & a{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+                & img {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+                & div {
+                    display: flex;
+                    flex-direction: column;
+                    & h4 {
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: var(--mainColor--);
+                    }
+                    & p {
+                        font-size: 14px;
+                        color: gray;
+                    }
+                }
+                &:hover {
+                    background-color: var(--lightColor--);
+                }
+            }
+        }
+        & .pageButtons {
+            position: relative;
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            margin: 10px;
+            & button {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                background-color: var(--mainColor--);
+                color: white;
+                cursor: pointer;
+                &:hover {
+                    background-color: transparent;
+                    border: 1px solid var(--mainColor--);
+                    color: var(--mainColor--);
+                }
+            }
+        }
+    }
+    & .recipePage {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        & .recipeHeader {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            & img {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+            }
+            & h1 {
+                width: fit-content;
+                height: 60px;
+                padding: 10px 20px;
+                background-color: var(--mainColor--);
+                font-size: 24px;
+                font-weight: bold;
+                color: white;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%) rotate(-5deg);
+                text-align: center;
+            }
+        }
+        & .recipeDetails {
+            height: 150px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: var(--lightColor--);
+            & .details {
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 25px;
+                & i{
+                    color: var(--mainColor--);
+                    margin-right: 5px;
+                    font-size: 18px;
+                }
+                & div i{
+                    cursor: pointer;
+                }
+            }
+            & .recipeBm{
+                width: 50%;
+                display: flex;
+                justify-content:center;
+                & i{
+                    color: white;
+                    font-size: 25px;
+                }
+                & div{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background-color: var(--mainColor--);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+            }
+        }
+        & .recipeInstructions{
+            width: 100%;
+            height: fit-content;
+            max-height: 750px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            background-color: whitesmoke;
+            padding: 10px;
+            & h2{
+                font-size: 30px;
+                margin-top: 30px;
+                color: var(--mainColor--);
+            }
+            & ul{
+                width: 100%;
+                height: 90%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 20px;
+                padding-left: 100px;
+                & li{
+                    width: 45%;
+                    list-style: none;
+                    padding: 20px;
+                    & i{
+                        color: var(--mainColor--);
+                    }
+                }
+            }
+        }
+        .howToCook{
+            width: 100%;
+            height: 400px;
+            /* background-color: red; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--lightColor--);
+            & h1{
+                color: var(--mainColor--);
+            }
+            & p{
+                width: 75%;
+                text-align: center;
+                margin-top: 20px;
+            }
+            & button{
+                background-color: var(--mainColor--);
+                color: white;
+                border: none;
+                padding: 15px 30px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                margin-top: 40px;
+                &:hover{
+                    background-color: darken(var(--mainColor--), 10%);
+                    color: var(--mainColor--);
+                    border: 3px solid var(--mainColor--);
+                }
+            }
+        }
+    }
+}
+.spinner{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 150px;
+    animation: spin 2s linear infinite;
+    & i{
+        font-size: 50px;
+        color: var(--mainColor--);
+    }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.noRecipe{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    & i{
+        font-size: 80px;
+        color: var(--mainColor--);
+    }
+    & h2{
+        width: 70%;
+        text-align: center;
+        color: gray;
+    }
+}
