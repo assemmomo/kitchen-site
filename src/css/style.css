@@ -91,10 +91,11 @@ nav{
         width: 25%;
         height: 100%;
         display: flex;
-        justify-content: space-around;
+        /* justify-content: center;
+        gap: 10px; */
         align-items: center;
         & a{
-            width: 40%;
+            width: 50%;
             text-decoration: none;
             color: black;
             & i{
@@ -235,6 +236,13 @@ nav{
                     color: var(--mainColor--);
                     margin-right: 5px;
                     font-size: 18px;
+                    transition: 0.3s;
+                }
+                & .servingsBtn:hover{
+                    transform: scale(1.2);
+                    padding: 3px;
+                    border-radius: 50%;
+                    border: 1px solid var(--mainColor--);
                 }
                 & div i{
                     cursor: pointer;
@@ -257,6 +265,13 @@ nav{
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
+                }
+                & div:hover{
+                    background-color: transparent;
+                    border: 2px solid var(--mainColor--);
+                    & i{
+                        color: var(--mainColor--);
+                    }
                 }
             }
         }
@@ -363,5 +378,137 @@ nav{
         width: 70%;
         text-align: center;
         color: gray;
+    }
+}
+.link_active{
+    background-color: var(--lightColor--);
+}
+.navLinks a{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    &:hover{
+        background-color: white;
+    }
+}
+.showBookmarks{
+    display: block !important;
+}
+.bookmarksPage{
+    position: absolute;
+    display: none;
+    top: 100%;
+    right: 0;
+    width: 400px;
+    height: fit-content;
+    max-height: 500px;
+    overflow-Y: scroll;
+    background-color: white;
+    z-index: 999;
+    & ul {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            height: fit-content;
+            padding-top: 20px;
+            list-style: none;
+            & li {
+                height: 100px;
+                width: 100%;
+                transition: 0.3s;
+                & a{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+                & img {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+                & div {
+                    display: flex;
+                    flex-direction: column;
+                    & h4 {
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: var(--mainColor--);
+                    }
+                    & p {
+                        font-size: 14px;
+                        color: gray;
+                    }
+                }
+                &:hover {
+                    background-color: var(--lightColor--);
+                }
+            }
+        }
+}
+
+@media(max-width:1400px){
+    .navLinks a{
+        font-size: 13px;
+    }
+    .searchResults li a div h4{
+        font-size: 15px !important;
+    }
+}
+@media(max-width:1200px){
+    .details{
+        width: 80% !important;
+    }
+    .recipeHeader h1{
+        font-size: 16px !important;
+    }
+}
+@media(max-width:1000px){
+    .searchResults li a img{
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .searchResults li a div h4{
+        font-size: 12px !important;
+    }
+    .searchResults li a div p{
+        font-size: 10px !important;
+    }
+    .details{
+        width: 90% !important;
+    }
+    .recipeBm{
+        width: 20% !important;
+    }
+    button[type="submit"]{
+        font-size: 10px !important;
+        height: 40% !important;
+    }
+    .search input::placeholder{
+        font-size: 10px !important;
+    }
+    .search input{
+        height: 40% !important;
+    }
+    .pageButtons button{
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+    }
+    .recipeInstructions ul{
+        padding-left: 20px !important;
+        width: 100% !important;
+        & li{
+            width: 100% !important;
+            font-size: 14px !important;
+            padding: 0 !important;
+        }
     }
 }
