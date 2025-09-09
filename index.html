@@ -21,8 +21,30 @@
                     </form>
                 </div>
                 <div class="navLinks">
-                    <a href="#"><i class="fas fa-plus"></i> ADD RECIPE</a>
-                    <a href="#"><i class="fas fa-bookmark"></i> BOOKMARKS</a>
+                    <a class="navAdd" href="#"><i class="fas fa-plus"></i> ADD RECIPE</a>
+                    <a class="navBm" href="#"><i class="fas fa-bookmark"></i> BOOKMARKS</a>
+                </div>
+                <div class="bookmarksPage">
+                    <ul class="bookmarksList">
+                        <!-- <li>
+                            <a href="#664c8f193e7aa067e94e897b">
+                                <img src="./imgs/logo.jpeg" alt="Recipe 1">
+                                <div>
+                                    <h4>Recipe 1</h4>
+                                    <p>Publisher 1</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#664c8f193e7aa067e94e8906">
+                                <img src="./imgs/logo.jpeg" alt="Recipe 1">
+                                <div>
+                                    <h4>Recipe 1</h4>
+                                    <p>Publisher 1</p>
+                                </div>
+                            </a>
+                        </li> -->
+                    </ul>
                 </div>
             </nav>
             <div class="content">
@@ -122,5 +144,14 @@
         </div>
 
         <script type="module" src="./src/js/controller.js"></script>
+        <script>
+            const bookmarksPage = document.querySelector('.bookmarksPage');
+            const navBm = document.querySelector('.navBm');
+
+            navBm.addEventListener('click', function(e){
+                e.preventDefault();
+                bookmarksPage.classList.toggle('showBookmarks');
+            });
+        </script>
 </body>
 </html>
