@@ -2,6 +2,23 @@ import View from './view.js';
 class recipeView extends View {
     _parentElement = document.querySelector('.recipePage');
 
+    addHandlerUpdateServings(handler){
+        this._parentElement.addEventListener('click', function(e){
+            const btn = e.target.closest('.servingsBtn');
+            if (!btn) return;
+
+            const updateTo = +btn.dataset.updateTo;
+            if (updateTo > 0) handler(updateTo);
+        });
+    }
+    addHandlerAddBookmark(handler){
+        this._parentElement.addEventListener('click', function(e){
+            const btn = e.target.closest('.bmBtn');
+            if (!btn) return;
+            handler();
+        });
+    }
+
     _generateMarkup(){
         return  `
         <div class="recipeHeader">
@@ -17,13 +34,13 @@ class recipeView extends View {
                                 <i class="fas fa-user"></i> <span>${this._data.servings}</span> Servings
                             </h4>
                             <div>
-                                <i class="fas fa-plus"></i>
-                                <i class="fas fa-minus"></i>
+                            <i class="fas fa-minus servingsBtn" data-update-to="${this._data.servings - 1}"></i>
+                            <i class="fas fa-plus servingsBtn" data-update-to="${this._data.servings + 1}"></i>
                             </div>
                         </div>
                         <div class="recipeBm">
                             <div>
-                                <i class="fas fa-bookmark"></i>
+                                <i class="${this._data.bookmarked ? 'fa-solid' : 'fa-regular'} fa-bookmark bmBtn"></i>
                             </div>
                         </div>
                     </div>
