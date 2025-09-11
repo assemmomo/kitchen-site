@@ -462,7 +462,7 @@ nav{
     background-color: var(--mainColor--);
     top: 300px;
     left: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 25px;
@@ -531,6 +531,9 @@ nav{
     }
 }
 @media(max-width:800px){
+    .openSearchResult{
+        display: flex !important;
+    }
     .container{
         width: 100% !important;
         border-radius: 0 !important;
@@ -576,6 +579,7 @@ nav{
         left: -100%;
         z-index: 998 !important;
         width: 100% !important;
+        height: fit-content !important;
         transition: 0.5s;
     }
     .content{
@@ -629,4 +633,3 @@ nav{
         width: 100% !important;
     }
 }
-
