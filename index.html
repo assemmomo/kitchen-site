@@ -17,12 +17,12 @@
                 <div class="navSearch">
                     <form class="search" action="#">
                         <input type="text" placeholder="Search over 10000 recipes...">
-                        <button type="submit"><i class="fas fa-search"></i> SEARCH</button>
+                        <button type="submit"><i class="fas fa-search"></i> <span>SEARCH</span></button>
                     </form>
                 </div>
                 <div class="navLinks">
-                    <a class="navAdd" href="#"><i class="fas fa-plus"></i> ADD RECIPE</a>
-                    <a class="navBm" href="#"><i class="fas fa-bookmark"></i> BOOKMARKS</a>
+                    <a class="navAdd" href="#"><i class="fas fa-plus"></i> <span>ADD RECIPE</span></a>
+                    <a class="navBm" href="#"><i class="fas fa-bookmark"></i> <span>BOOKMARKS</span></a>
                 </div>
                 <div class="bookmarksPage">
                     <ul class="bookmarksList">
@@ -141,16 +141,26 @@
                     </div> -->
                 </div>
             </div>
+            <div class="openSearchResult">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
 
         <script type="module" src="./src/js/controller.js"></script>
         <script>
             const bookmarksPage = document.querySelector('.bookmarksPage');
             const navBm = document.querySelector('.navBm');
+            const openSearchResult = document.querySelector('.openSearchResult');
+            const sideBar = document.querySelector('.sideBar');
 
             navBm.addEventListener('click', function(e){
                 e.preventDefault();
                 bookmarksPage.classList.toggle('showBookmarks');
+            });
+            openSearchResult.addEventListener('click', function(){
+                sideBar.classList.toggle('showSideBar');
+                openSearchResult.querySelector('i').classList.toggle('fa-bars');
+                openSearchResult.querySelector('i').classList.toggle('fa-xmark');
             });
         </script>
 </body>
