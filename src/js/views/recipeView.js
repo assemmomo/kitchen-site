@@ -20,6 +20,7 @@ class recipeView extends View {
     }
 
     _generateMarkup(){
+        hideSideBar()
         return  `
         <div class="recipeHeader">
                         <img src="${this._data.image}" alt="">
@@ -61,5 +62,12 @@ class recipeView extends View {
                     </div>
         `;
     }
+}
+function hideSideBar() {
+    const sideBar = document.querySelector('.sideBar');
+    const openSearchResult = document.querySelector('.openSearchResult');
+    openSearchResult.querySelector('i').classList.add('fa-bars');
+    openSearchResult.querySelector('i').classList.remove('fa-xmark');
+    sideBar.classList.remove('showSideBar');
 }
 export default new recipeView();
