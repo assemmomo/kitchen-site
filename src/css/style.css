@@ -454,7 +454,25 @@ nav{
             }
         }
 }
-
+.openSearchResult{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--mainColor--);
+    top: 300px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    z-index: 999;
+}
+.showSideBar{
+    left: 0 !important;
+}
 @media(max-width:1400px){
     .navLinks a{
         font-size: 13px;
@@ -510,5 +528,104 @@ nav{
             font-size: 14px !important;
             padding: 0 !important;
         }
+    }
+}
+@media(max-width:800px){
+    .container{
+        width: 100% !important;
+        border-radius: 0 !important;
+        margin-top: 0 !important;
+    }
+    nav .navIcon img{
+        width: 50px !important;
+        height: 50px !important;
+        margin-left: 20px !important;
+    }
+    nav .navIcon{
+        width: 25% !important;
+    }
+    nav .navSearch{
+        width: 45% !important;
+        & form input{
+            width: 100% !important;
+        }
+        & form button{
+            width: 30px !important;
+            right: 0px !important;
+            height: 30px !important;
+            & span{
+                display: none !important;
+            }
+            & i{
+                font-size: 16px !important;
+                margin-left: 10px !important;
+            }
+    }
+    }
+    nav .navLinks{
+        width: 30% !important;
+        justify-content: end;
+    }
+    nav .navLinks a{
+        font-size: 10px !important;
+        width: 40% !important;
+        margin-right: 10px;
+    }
+    .sideBar{
+        position: absolute !important;
+        left: -100%;
+        z-index: 998 !important;
+        width: 100% !important;
+        transition: 0.5s;
+    }
+    .content{
+        grid-template-columns: 1fr !important;
+    }
+    .recipeHeader h1{
+        font-size: 14px !important;
+        height: fit-content !important;
+        padding: 5px 10px !important;
+        bottom: -10px !important;
+    }
+    .recipeDetails{
+        flex-direction: column !important;
+        height: fit-content !important;
+        gap: 10px !important;
+        padding: 10px !important;
+        margin-top: 50px;
+    }
+    .details{
+        width: 100% !important;
+        justify-content: space-around !important;
+    }
+    .recipeBm{
+        width: fit-content !important;
+    }
+    .howToCook button{
+        padding: 10px 20px !important;
+        font-size: 14px !important;
+    }
+}
+@media(max-width:550px){
+    .navLinks a span{
+        display: none !important;
+    }
+    .navLinks a i{
+        font-size: 20px !important;
+    }
+    .recipeInstructions h2{
+        font-size: 24px !important;
+    }
+}
+@media(max-width:500px){
+    .search input::placeholder{
+        font-size: 9px !important;
+        padding: 0 !important;
+    }
+    .search input{
+        padding-left: 10px !important;
+    }
+    .search{
+        width: 100% !important;
     }
 }
